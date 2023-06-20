@@ -2,15 +2,33 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<id>demo-publish</id>
+			<name>Omkar Tirkhunde</name>
+			<email>omkart@agsft.com</email>
+		</developer>
+	</developers>
+	<scm>
+		<connection>scm:git:git@github.com:/Omkar3282/com.agsft.git</connection>
+		<developerConnection>scm:git:ssh://github.com:/Omkar3282/com.agsft.git</developerConnection>
+		<url>https://github.com/Omkar3282/com.agsft</url>
+	</scm>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.7.12</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.agsft.publish</groupId>
+	<groupId>io.github.Omkar3282</groupId>
 	<artifactId>demo-publish</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>demo-publish</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -38,9 +56,13 @@
 		</plugins>
 	</build>
 	<distributionManagement>
-  		<repository>
-    			<id>central</id>
-    			<url>https://repo.maven.apache.org/maven2</url>
- 		</repository>
+		<snapshotRepository>
+			<id>central</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>central</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+		</repository>
 	</distributionManagement>
 </project>
