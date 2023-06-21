@@ -14,11 +14,11 @@ jobs:
         server-id: ossrh
         server-username: omkart@agsft.com
         server-password: Omkar@774488
-        gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
-        gpg-passphrase: OmkarT3282
+        gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+        GPG_PASSPHRASE: OmkarT3282
     - name: Deploy with Maven
       run: mvn -B clean deploy -Pci-cd
       env:
-        MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-        MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
-        MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+        USERNAME: ${{ secrets.OSSRH_USERNAME }}
+        PASSWORD: ${{ secrets.OSSRH_TOKEN }}
+        GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
